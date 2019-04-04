@@ -18,8 +18,9 @@ def verifyInput(prompt, default):
     return userInput
 
 sourcePath = verifyInput("Input folder path to copy", os.getcwd())
-extension = verifyInput("Input file type to copy, including the period", '.jpg')
-destPath = verifyInput("Input destination folder", sourcePath + '/' + extension[1:] + 'copy')
+extension = verifyInput("Input extension of file type to copy, not including the period", 'jpg')
+parentDir, sourceFolder = os.path.split(sourcePath)
+destPath = verifyInput("Input destination folder", parentDir + '/' + sourceFolder + extension + 'copy')
 if not os.path.exists(destPath):
     os.mkdir(destPath)
 
