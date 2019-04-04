@@ -25,7 +25,7 @@ if not os.path.exists(destPath):
     os.mkdir(destPath)
 
 count = 0
-root, dirs, files = os.walk(sourcePath)[0];
+root, dirs, files = os.walk(sourcePath)[0]
 
 for file in files:
     if file[-4:] == extension:
