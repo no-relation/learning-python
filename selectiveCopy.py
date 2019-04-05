@@ -25,6 +25,7 @@ if not os.path.exists(destPath):
     os.mkdir(destPath)
 
 count = 0
+# only want top-level directory, not the whole tree down. It's a feature, not a bug.
 root, dirs, files = os.walk(sourcePath)[0]
 
 for file in files:
